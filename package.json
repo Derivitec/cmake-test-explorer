@@ -3,17 +3,20 @@
   "displayName": "CMake Test Explorer",
   "description": "Run your CMake tests in the Sidebar of Visual Studio Code",
   "icon": "img/icon.png",
-  "author": "Frédéric Bonnet <fredericbonnet@free.fr>",
-  "publisher": "fredericbonnet",
-  "version": "0.5.0",
+  "contributors": [
+    "Frédéric Bonnet <fredericbonnet@free.fr>",
+    "Andrew Bridge (http://github.com/andrewbridge)"
+  ],
+  "publisher": "derivitec-ltd",
+  "version": "0.6.0",
   "license": "BSD-3-Clause",
-  "homepage": "https://github.com/fredericbonnet/cmake-test-explorer",
+  "homepage": "https://github.com/Derivitec/cmake-test-explorer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fredericbonnet/cmake-test-explorer.git"
+    "url": "https://github.com/Derivitec/cmake-test-explorer.git"
   },
   "bugs": {
-    "url": "https://github.com/fredericbonnet/cmake-test-explorer/issues"
+    "url": "https://github.com/Derivitec/cmake-test-explorer/issues"
   },
   "categories": [
     "Other"

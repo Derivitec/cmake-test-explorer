@@ -1,0 +1,11 @@
+{
+	"image": "333996703325.dkr.ecr.us-east-1.amazonaws.com/derivitec/build/base:latest",
+	"extensions": [
+		"hbenl.vscode-test-explorer",
+		"ms-vscode.cpptools",
+		"ms-vscode.cmake-tools"
+	],
+	"mounts": [
+		"source=${localEnv:HOME}/Projects/Derivitec,target=/workspaces/Derivitec,type=bind,consistency=cached"
+	]
+  }
