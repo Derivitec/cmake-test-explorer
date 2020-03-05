@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2020-03-05
+
+### Added
+
+- Add optional integration with CMake extension (ms-vscode.cmake-tools) which allows contextual
+  variables such as `${buildType}` and `${workspaceFolder}` to be used in string based settings.
+  This can be turned on by setting `cmakeExplorer.cmakeIntegration` to `true`.
+
 ## [0.6.0] - 2020-03-04
 
 ### Added
@@ -54,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First release.
 
-[unreleased]: https://github.com/Derivitec/cmake-test-explorer/compare/v0.6.0...HEAD
+[unreleased]: https://github.com/Derivitec/cmake-test-explorer/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/Derivitec/cmake-test-explorer/compare/v0.7.0...v0.7.0
 [0.6.0]: https://github.com/Derivitec/cmake-test-explorer/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/Derivitec/cmake-test-explorer/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/Derivitec/cmake-test-explorer/compare/v0.3.1...v0.4.0
