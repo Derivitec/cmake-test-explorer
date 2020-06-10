@@ -5,10 +5,11 @@
   "icon": "img/icon.png",
   "contributors": [
     "Frédéric Bonnet <fredericbonnet@free.fr>",
-    "Andrew Bridge (http://github.com/andrewbridge)"
+    "Andrew Bridge (https://github.com/andrewbridge)",
+    "Michael Armitage (https://github.com/armitagemderivitec)"
   ],
   "publisher": "derivitec-ltd",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/Derivitec/cmake-test-explorer",
   "repository": {

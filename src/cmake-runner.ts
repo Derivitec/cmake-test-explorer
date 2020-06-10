@@ -210,7 +210,7 @@ export function executeCmakeDebug(
             workspaceFolder = workspace.workspaceFolders.find(folder => folder.uri.fsPath.indexOf(cwd) > -1);
           }
           debug.startDebugging(workspaceFolder, {
-            name: '(gdb) Launch',
+            name: 'CTest',
             type: 'cppdbg',
             request: 'launch',
             program,
@@ -219,14 +219,19 @@ export function executeCmakeDebug(
             cwd: workspace.rootPath,
             environment: test.properties,
             externalConsole: false,
-            MIMode: 'gdb',
-            setupCommands: [
-              {
-                description: 'Enable pretty-print for gdb',
-                text: '-enable-pretty-printing',
-                ignoreFailures: true,
-              },
-            ]
+            osx: {
+              MIMode: 'lldb'
+            },
+            linux:{
+              MIMode: 'gdb',
+              setupCommands: [
+                {
+                  description: 'Enable pretty-print for gdb',
+                  text: '-enable-pretty-printing',
+                  ignoreFailures: true,
+                },
+              ]
+            }
           });
           found = true;
         } catch { }
