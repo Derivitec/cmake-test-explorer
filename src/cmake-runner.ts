@@ -4,6 +4,7 @@
 
 import * as child_process from 'child_process';
 import * as fs from 'fs';
+import * as os from 'os';
 import * as path from 'path';
 import { debug, workspace } from 'vscode';
 import { CmakeTestInfo } from './interfaces/cmake-test-info';
@@ -209,20 +210,31 @@ export function executeCmakeDebug(
           if (typeof cwd === 'string' && Array.isArray(workspace.workspaceFolders)) {
             workspaceFolder = workspace.workspaceFolders.find(folder => folder.uri.fsPath.indexOf(cwd) > -1);
           }
-          debug.startDebugging(workspaceFolder, {
-            name: 'CTest',
-            type: 'cppdbg',
-            request: 'launch',
-            program,
-            args,
-            stopAtEntry: false,
-            cwd: workspace.rootPath,
-            environment: test.properties,
-            externalConsole: false,
-            osx: {
-              MIMode: 'lldb'
-            },
-            linux:{
+          if (os.platform() === 'darwin') {
+            debug.startDebugging(workspaceFolder, {
+              name: 'CTest',
+              type: 'lldb',
+              request: 'launch',
+              program,
+              args,
+              stopAtEntry: true,
+              cwd: workspace.rootPath,
+              environment: test.properties,
+              externalConsole: false,
+            });
+          }
+          else
+          {
+            debug.startDebugging(workspaceFolder, {
+              name: 'CTest',
+              type: 'cppdbg',
+              request: 'launch',
+              program,
+              args,
+              stopAtEntry: false,
+              cwd: workspace.rootPath,
+              environment: test.properties,
+              externalConsole: false,
               MIMode: 'gdb',
               setupCommands: [
                 {
@@ -231,8 +243,8 @@ export function executeCmakeDebug(
                   ignoreFailures: true,
                 },
               ]
-            }
-          });
+            });
+          }
           found = true;
         } catch { }
       });

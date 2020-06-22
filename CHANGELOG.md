@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.3] - 2020-06-22
+
+- Switch Mac debugging to LLDB using CodeLLDB extension since the MS version does not work
+
 ## [0.7.0] - 2020-03-05
 
 ### Added

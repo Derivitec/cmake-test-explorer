@@ -9,7 +9,7 @@
     "Michael Armitage (https://github.com/armitagemderivitec)"
   ],
   "publisher": "derivitec-ltd",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/Derivitec/cmake-test-explorer",
   "repository": {
@@ -50,7 +50,8 @@
     "vscode": "^1.31.0"
   },
   "extensionDependencies": [
-    "hbenl.vscode-test-explorer"
+    "hbenl.vscode-test-explorer",
+    "vadimcn.vscode-lldb"
   ],
   "activationEvents": [
     "*"
