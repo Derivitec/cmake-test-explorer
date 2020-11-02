@@ -231,7 +231,7 @@ export function executeCmakeDebug(
               request: 'launch',
               program,
               args,
-              stopAtEntry: false,
+              stopAtEntry: true,
               cwd: workspace.rootPath,
               environment: test.properties,
               externalConsole: false,
@@ -242,7 +242,12 @@ export function executeCmakeDebug(
                   text: '-enable-pretty-printing',
                   ignoreFailures: true,
                 },
-              ]
+              ],
+              logging: {
+                  trace: true,
+                  traceResponse: true,
+                  engineLogging: true
+              }
             });
           }
           found = true;
